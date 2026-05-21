@@ -10,7 +10,7 @@
 
   html, body {
     width: 100%; height: 100%;
-    background: #dd3d3d;
+    background: #3dddb5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,7 +33,7 @@
 
   window.addEventListener('deviceorientationabsolute', e => {
     if (e.alpha === null) return;
-    const b = Math.round((630 - e.alpha) % 360);
+    const b = Math.round((360 + 360 - e.alpha) % 360);
     el.textContent = String(b).padStart(3, '0');
   }, true);
 </script>
