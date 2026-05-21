@@ -10,7 +10,7 @@
 
   html, body {
     width: 100%; height: 100%;
-    background: #000;
+    background: #dd3d3d;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,9 +31,9 @@
 <script>
   const el = document.getElementById('bearing');
 
-  window.addEventListener('deviceorientation', e => {
+  window.addEventListener('deviceorientationabsolute', e => {
     if (e.alpha === null) return;
-    const b = Math.round((270 + 360 - e.alpha) % 360);
+    const b = Math.round((630 - e.alpha) % 360);
     el.textContent = String(b).padStart(3, '0');
   }, true);
 </script>
